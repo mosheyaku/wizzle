@@ -78,9 +78,9 @@ export default function DisplayPDFWords({ pdfId, accessToken }) {
 
     let maxHeight;
     if (window.innerWidth <= 768 && displayContainer) {
-      maxHeight = displayContainer.clientHeight + 10; 
+      maxHeight = displayContainer.clientHeight + 15; 
     } else {
-      maxHeight = container.clientHeight + 10; 
+      maxHeight = container.clientHeight + 15; 
     }
 
     let chunks = [];
