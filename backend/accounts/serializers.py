@@ -17,21 +17,20 @@ class RegisterSerializer(serializers.ModelSerializer):
             'username': {'write_only': True},
         }
         
-        def validate(self, attrs):
-            password = attrs.get('password')
-            password2 = attrs.get('password2')
-            
-            if password2 and password != password2:
-                raise serializers.ValidationError({"password": "Passwords do not match."})
-            
-            try:
-                
-                validate_password(password)
-            except DjangoValidationError as e:
-                raise serializers.ValidationError({"password": list(e.messages)})
-            return attrs
+    def validate(self, attrs):
+        password = attrs.get('password')
+        password2 = attrs.get('password2')
+        
+        if password2 and password != password2:
+            raise serializers.ValidationError({"password": "Passwords do not match."})
+        
+        try:
+            validate_password(password)
+        except DjangoValidationError as e:
+            raise serializers.ValidationError({"password": list(e.messages)})
+        return attrs
 
     def create(self, validated_data):
-        validated_data.pop('password2', None)  # remove if present
+        validated_data.pop('password2', None)
         user = User.objects.create_user(**validated_data)
         return user
