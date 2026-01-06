@@ -7,3 +7,5 @@ python-decouple>=3.8
 djangorestframework-simplejwt
 PyMuPDF>=1.23
 requests>=2.31.0
+pytest
+pytest-django
