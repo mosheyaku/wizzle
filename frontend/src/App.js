@@ -7,11 +7,11 @@ import {
   useNavigate,
   useLocation,
 } from 'react-router-dom';
-import UploadPDF from './components/UploadPDF';
-import DisplayPDFWords from './components/DisplayPDFWords';
+import UploadPDF from './components/upload-pdf/UploadPDF';
+import DisplayPDFWords from './components/display-pdf-words/DisplayPDFWords';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
-import Vocabulary from './components/Vocabulary';
+import Vocabulary from './components/vocabulary/Vocabulary';
 import './App.css';
 import axios from 'axios';
 

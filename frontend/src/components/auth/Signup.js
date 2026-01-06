@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Popup from '../Popup';
+import Popup from '../popup/Popup';
 import './AuthBase.css';
 
 export default function Signup({ onSignupSuccess }) {
